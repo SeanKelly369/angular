@@ -367,7 +367,7 @@ export class PageRouterOutlet implements OnDestroy, RouterOutletContract {
         { provide: ChildrenOutletContexts, useValue: this.parentContexts.getOrCreateContext(this.name).children },
         { provide: PageService, useClass: PageService },
       ],
-      parent: location.injector,
+      parent: this.location.injector,
     });
 
     const injector = new DestructibleInjector(destructibles, parentInjector);
